@@ -1,10 +1,11 @@
 import React from "react";
 import "./App.css";
+
 //Pages
 import StartPage from "./pages/StartPage";
 //Components
 import Navbar from "./components/Navbar";
-import GamePage from "./pages/gamePage";
+import GamePage from "./pages/GamePage";
 import Footer from "./components/Footer";
 import GameOver from "./components/GameOver";
 import { connect } from "react-redux";

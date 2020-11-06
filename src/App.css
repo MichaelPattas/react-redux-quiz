@@ -195,10 +195,16 @@ li {
 /* answers */
 .right-answer {
   background-color: green;
+  pointer-events: none;
 }
 
 .wrong-answer {
   background: crimson;
+  pointer-events: none;
+}
+
+.disabled {
+  pointer-events: none;
 }
 
 /* Game Over */

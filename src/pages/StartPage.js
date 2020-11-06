@@ -3,6 +3,7 @@ import DifficultyButton from "../components/DifficultyButton";
 import StartButton from "../components/StartButton";
 
 const StartPage = () => {
+  useEffect(() => {}, []);
   return (
     <div className="page">
       <div className="difficulty-title">Difficulty</div>
