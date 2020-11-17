@@ -1,14 +1,21 @@
 import React from "react";
 
 import { connect } from "react-redux";
-import { setDifficultyLevel } from "../actions";
+import { setDifficultyLevel, setDifficutyMessage } from "../actions";
 
-const DifficultyButton = ({ level, name, setDifficultyLevel }) => {
+const DifficultyButton = ({
+  level,
+  name,
+  setDifficultyLevel,
+  setDifficutyMessage,
+}) => {
+  const chooseDifficulty = () => {
+    setDifficultyLevel({ level });
+    setDifficutyMessage("");
+  };
+
   return (
-    <button
-      onClick={() => setDifficultyLevel({ level })}
-      className="button-difficulty"
-    >
+    <button onClick={() => chooseDifficulty()} className="button-difficulty">
       {name}
     </button>
   );
@@ -20,4 +27,5 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, {
   setDifficultyLevel,
+  setDifficutyMessage,
 })(DifficultyButton);

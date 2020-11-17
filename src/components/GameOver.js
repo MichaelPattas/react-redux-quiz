@@ -1,10 +1,29 @@
-import React, { useEffect } from "react";
+import React from "react";
+import Loading from "../components/Loading";
 import { connect } from "react-redux";
-import { setGameStatus, setQuestionNumber } from "../actions";
-const GameOver = ({ setGameStatus, setQuestionNumber }) => {
-  useEffect(() => {
-    setQuestionNumber(0 - 1);
-  }, []);
+import { succesRate } from "../utils/utils";
+import {
+  setGameStatus,
+  setQuestionNumber,
+  setDifficultyLevel,
+  setGameScore,
+} from "../actions";
+const GameOver = ({
+  setGameStatus,
+  setDifficultyLevel,
+  gameScore,
+  setGameScore,
+  loading,
+}) => {
+  const restartGame = () => {
+    setGameScore(0);
+    setDifficultyLevel(null);
+    setGameStatus("start-page");
+  };
+
+  if (loading === true) {
+    return <Loading />;
+  }
   return (
     <div className="game-page">
       <div className="game-over-page">
@@ -12,12 +31,12 @@ const GameOver = ({ setGameStatus, setQuestionNumber }) => {
           <h1>Game over</h1>
         </div>
         <div className="succes-rate">
-          {/* <h1>{succesRate(correct, 10)}%</h1> */}
+          {<h3>Succes Rate: {succesRate(gameScore, 10)} %</h3>}
         </div>
 
         <div>
           <button
-            onClick={() => setGameStatus("start-page")}
+            onClick={() => restartGame()}
             className="button-difficulty start-button"
           >
             Play Again
@@ -32,6 +51,9 @@ const mapStateToProps = (state) => {
   return state;
 };
 
-export default connect(mapStateToProps, { setGameStatus, setQuestionNumber })(
-  GameOver
-);
+export default connect(mapStateToProps, {
+  setGameStatus,
+  setQuestionNumber,
+  setDifficultyLevel,
+  setGameScore,
+})(GameOver);

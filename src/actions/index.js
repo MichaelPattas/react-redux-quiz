@@ -1,3 +1,5 @@
+import { difficultyLevelMessage } from "../utils/utils";
+
 export const setDifficultyLevel = (difficulty) => {
   return {
     type: "DIFFICULTY_LEVEL",
@@ -25,15 +27,24 @@ export const setGameoverStatus = (status) => {
     payload: status,
   };
 };
-export const setFinalScore = (score) => {
-  return {
-    type: "SET_FINAL_SCORE",
-    payload: score,
-  };
-};
+
 export const setQuestionNumber = (number) => {
   return {
     type: "SET_QUESTION_NUMBER",
+    payload: number + 1,
+  };
+};
+
+export const setDifficutyMessage = (message = difficultyLevelMessage) => {
+  return {
+    type: "SET_DIFFICULTY_MESSAGE",
+    payload: message,
+  };
+};
+
+export const setGameScore = (number) => {
+  return {
+    type: "SET_GAME_SCORE",
     payload: number + 1,
   };
 };

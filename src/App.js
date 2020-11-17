@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 
 //Pages
 import StartPage from "./pages/StartPage";

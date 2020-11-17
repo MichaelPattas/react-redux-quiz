@@ -1,22 +1,23 @@
 import React from "react";
 import { connect } from "react-redux";
-import { getQuestionList } from "../actions/getQuestionList";
-import { shuffleArray } from "../utils/utils";
+
+import { shuffleArray, addClassName, removeClassName } from "../utils/utils";
 import {
   setGameStatus,
-  setLoadingStatus,
   setQuestionNumber,
+  setGameScore,
+  setLoadingStatus,
 } from "../actions/index";
-
 import DOMPurity from "dompurify";
 
 const GameCard = ({
   questionList,
-  loading,
-  setLoadingStatus,
   questionNumber,
   setQuestionNumber,
   setGameStatus,
+  setGameScore,
+  gameScore,
+  setLoadingStatus,
 }) => {
   let answersArray = shuffleArray([
     ...questionList[questionNumber].incorrect_answers,
@@ -24,16 +25,28 @@ const GameCard = ({
   ]);
 
   if (questionNumber === 9) {
-    return setGameStatus("game-over-page");
+    setQuestionNumber(0);
+    setLoadingStatus(true);
+
+    setGameStatus("game-over-page");
   }
 
-  let eventPointerStyle = "none";
+  setTimeout(() => {}, 3000);
   const checkAnswer = (e) => {
-    eventPointerStyle = "none";
-    if (e.currentTarget.value === questionList[questionNumber].correct_answer) {
-      e.currentTarget.classList.add("right-answer");
+    let answerButton = e.currentTarget;
+    if (answerButton.value === questionList[questionNumber].correct_answer) {
+      addClassName(answerButton, "right-answer");
+      setGameScore(gameScore);
+      setTimeout(() => {
+        removeClassName(answerButton, "right-answer");
+        setQuestionNumber(questionNumber);
+      }, 2000);
     } else {
-      e.currentTarget.classList.add("wrong-answer");
+      addClassName(answerButton, "wrong-answer");
+      setTimeout(() => {
+        removeClassName(answerButton, "wrong-answer");
+        setQuestionNumber(questionNumber);
+      }, 2000);
     }
   };
 
@@ -46,13 +59,11 @@ const GameCard = ({
           }}
           className="game-question"
         ></div>
-        <div
-          style={{ pointerEvents: eventPointerStyle }}
-          className="game-answers"
-        >
+        <div className="game-answers">
           {answersArray.map((answer) => {
             return (
               <button
+                key={answer}
                 dangerouslySetInnerHTML={{
                   __html: DOMPurity.sanitize(answer),
                 }}
@@ -73,8 +84,8 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, {
-  getQuestionList,
-  setLoadingStatus,
   setQuestionNumber,
   setGameStatus,
+  setGameScore,
+  setLoadingStatus,
 })(GameCard);

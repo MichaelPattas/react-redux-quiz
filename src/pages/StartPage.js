@@ -1,12 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import DifficultyButton from "../components/DifficultyButton";
 import StartButton from "../components/StartButton";
-
-const StartPage = () => {
-  useEffect(() => {}, []);
+import { connect } from "react-redux";
+const StartPage = ({ difficultyMessage }) => {
   return (
     <div className="page">
-      <div className="difficulty-title">Difficulty</div>
+      <div className="difficulty-title">{difficultyMessage}</div>
       <div className="pick-difficulty">
         <p className="difficulty"></p>
         <DifficultyButton level={"easy"} name={"Easy"} />
@@ -18,4 +17,8 @@ const StartPage = () => {
   );
 };
 
-export default StartPage;
+const mapStateToProps = (state) => {
+  return state;
+};
+
+export default connect(mapStateToProps)(StartPage);
