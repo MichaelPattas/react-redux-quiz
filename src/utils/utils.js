@@ -20,4 +20,19 @@ export const removeClassName = (element, name) => {
   element.parentNode.parentNode.classList.remove("disabled");
 };
 
+export const difficultyButtonInformation = [
+  {
+    buttonName: "Easy",
+    difficultyLevel: "easy",
+  },
+  {
+    buttonName: "Normal",
+    difficultyLevel: "medium",
+  },
+  {
+    buttonName: "Hard",
+    difficultyLevel: "hard",
+  },
+];
+
 export const difficultyLevelMessage = "Please Choose  Difficulty Level";

@@ -1,17 +1,32 @@
 import React from "react";
-import DifficultyButton from "../components/DifficultyButton";
-import StartButton from "../components/StartButton";
 import { connect } from "react-redux";
-const StartPage = ({ difficultyMessage }) => {
+
+import StartButton from "../components/StartButton";
+import DifficultyButton from "../components/DifficultyButton";
+import { getQuestionList } from "../actions/getQuestionList";
+import { difficultyButtonInformation } from "../utils/utils";
+
+const StartPage = ({ difficultyMessage, getQuestionList }) => {
+  const renderDifficultyButtons = difficultyButtonInformation.map(
+    ({ buttonName, difficultyLevel }) => {
+      const onGetAllQuestions = (level) => {
+        return getQuestionList(level);
+      };
+
+      return (
+        <DifficultyButton
+          setDifficultyLevel={onGetAllQuestions}
+          name={buttonName}
+          level={difficultyLevel}
+        />
+      );
+    }
+  );
+
   return (
     <div className="page">
       <div className="difficulty-title">{difficultyMessage}</div>
-      <div className="pick-difficulty">
-        <p className="difficulty"></p>
-        <DifficultyButton level={"easy"} name={"Easy"} />
-        <DifficultyButton level={"medium"} name={"Normal"} />
-        <DifficultyButton level={"hard"} name={"Hard"} />
-      </div>
+      <div className="pick-difficulty">{renderDifficultyButtons}</div>
       <StartButton />
     </div>
   );
@@ -21,4 +36,4 @@ const mapStateToProps = (state) => {
   return state;
 };
 
-export default connect(mapStateToProps)(StartPage);
+export default connect(mapStateToProps, { getQuestionList })(StartPage);
