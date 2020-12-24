@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 
-import StartButton from "../components/StartButton";
-import DifficultyButton from "../components/DifficultyButton";
-import Loading from "../components/Loading";
 import { getQuestionList } from "../actions/getQuestionList";
 import { setGameStatus } from "../actions";
+
+import StartButton from "../components/StartButton";
+import DifficultyButton from "../components/DifficultyButton";
+
 import { difficultyButtonInformation } from "../utils/utils";
 
 const StartPage = ({ setGameStatus, getQuestionList }) => {
