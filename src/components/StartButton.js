@@ -1,23 +1,10 @@
 import React from "react";
-import { connect } from "react-redux";
 
-import {
-  setDifficutyMessage,
-  setGameStatus,
-  setLoadingStatus,
-} from "../actions";
-
-import { getQuestionList } from "../actions/getQuestionList";
-
-const StartButton = ({ questionList, setGameStatus, setLoadingStatus }) => {
+const StartButton = ({ startGame }) => {
   return (
     <div>
       <button
-        onClick={() => {
-          console.log(questionList);
-          setLoadingStatus(true);
-          setGameStatus("game-page");
-        }}
+        onClick={() => startGame()}
         className="button-difficulty start-button"
       >
         Start Game
@@ -26,13 +13,4 @@ const StartButton = ({ questionList, setGameStatus, setLoadingStatus }) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  return state;
-};
-
-export default connect(mapStateToProps, {
-  setGameStatus,
-  setLoadingStatus,
-  getQuestionList,
-  setDifficutyMessage,
-})(StartButton);
+export default StartButton;
