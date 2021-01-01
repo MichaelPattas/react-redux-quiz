@@ -8,6 +8,6 @@ export const setGameStatus = (status) => {
 export const setGameScore = (number) => {
   return {
     type: "SET_GAME_SCORE",
-    payload: number + 1,
+    payload: number,
   };
 };
