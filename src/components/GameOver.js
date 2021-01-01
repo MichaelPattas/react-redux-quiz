@@ -24,7 +24,7 @@ const GameOver = ({ setGameStatus, gameScore }) => {
       </div>
       <div className="bottom-line"></div>
       <div className="succes-rate">
-        {<h3>Succes Rate: {succesRate(gameScore, 10)} %</h3>}
+        {<h3>Succes Rate: {`${succesRate(gameScore, 10)}`} %</h3>}
       </div>
 
       <div>
