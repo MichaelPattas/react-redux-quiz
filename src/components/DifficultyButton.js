@@ -1,9 +1,13 @@
 import React from "react";
 
 const DifficultyButton = ({ level, name, getDifficultyLevel }) => {
+  const onDifficultyButtonClick = () => {
+    return getDifficultyLevel(level);
+  };
+
   return (
     <button
-      onClick={() => getDifficultyLevel(level)}
+      onClick={() => onDifficultyButtonClick()}
       className="button-difficulty"
     >
       {name}

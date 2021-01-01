@@ -1,79 +1,58 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { connect } from "react-redux";
 
 import { shuffleArray, addClassName, removeClassName } from "../utils/utils";
-import {
-  setGameStatus,
-  setQuestionNumber,
-  setGameScore,
-  setLoadingStatus,
-} from "../actions/index";
-import DOMPurity from "dompurify";
+import { setGameStatus, setGameScore } from "../actions/index";
+import AnswerButton from "./AnswerButton";
+import Question from "./Question";
 
-const GameCard = ({
-  questionList,
-  questionNumber,
-  setQuestionNumber,
-  setGameStatus,
-  setGameScore,
-  gameScore,
-  setLoadingStatus,
-}) => {
-  let answersArray = shuffleArray([
-    ...questionList[questionNumber].incorrect_answers,
-    questionList[questionNumber].correct_answer,
-  ]);
+const GameCard = ({ questionList, setGameStatus, setGameScore, gameScore }) => {
+  const [questionNumber, setQuestionNumber] = useState(0);
+  const [answersArray, setAnswersArray] = useState([]);
+
+  useEffect(() => {
+    setAnswersArray(
+      shuffleArray([
+        ...questionList[questionNumber].incorrect_answers,
+        questionList[questionNumber].correct_answer,
+      ])
+    );
+  }, [questionNumber]);
+
+  const refGameCard = useRef(null);
 
   if (questionNumber === 9) {
-    setQuestionNumber(0);
-    setLoadingStatus(true);
-
     setGameStatus("game-over-page");
   }
 
-  setTimeout(() => {}, 3000);
   const checkAnswer = (e) => {
     let answerButton = e.currentTarget;
+    let answerResult;
+
     if (answerButton.value === questionList[questionNumber].correct_answer) {
-      addClassName(answerButton, "right-answer");
+      answerResult = "right-answer";
       setGameScore(gameScore);
-      setTimeout(() => {
-        removeClassName(answerButton, "right-answer");
-        setQuestionNumber(questionNumber);
-      }, 2000);
     } else {
-      addClassName(answerButton, "wrong-answer");
-      setTimeout(() => {
-        removeClassName(answerButton, "wrong-answer");
-        setQuestionNumber(questionNumber);
-      }, 2000);
+      answerResult = "wrong-answer";
     }
+    addClassName(answerButton, answerResult);
+    addClassName(refGameCard.current, "disabled");
+    setTimeout(() => {
+      removeClassName(refGameCard.current, "disabled");
+      removeClassName(answerButton, answerResult);
+      setQuestionNumber(questionNumber + 1);
+    }, 2500);
   };
 
+  const renderAnswers = answersArray.map((answer) => (
+    <AnswerButton key={answer} checkAnswer={checkAnswer} answer={answer} />
+  ));
+
   return (
-    <div className="game-page">
-      <div className="game-content">
-        <div
-          dangerouslySetInnerHTML={{
-            __html: DOMPurity.sanitize(questionList[questionNumber].question),
-          }}
-          className="game-question"
-        ></div>
-        <div className="game-answers">
-          {answersArray.map((answer) => {
-            return (
-              <button
-                key={answer}
-                dangerouslySetInnerHTML={{
-                  __html: DOMPurity.sanitize(answer),
-                }}
-                value={answer}
-                onClick={(e) => checkAnswer(e)}
-                className="answer-button"
-              ></button>
-            );
-          })}
-        </div>
+    <div ref={refGameCard} className="container">
+      <div className="game-card">
+        <Question question={questionList[questionNumber].question} />
+        <div className="game-answers">{renderAnswers}</div>
       </div>
     </div>
   );
@@ -84,8 +63,6 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, {
-  setQuestionNumber,
   setGameStatus,
   setGameScore,
-  setLoadingStatus,
 })(GameCard);

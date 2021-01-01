@@ -24,7 +24,7 @@ const App = ({ gameStatus }) => {
   };
 
   return (
-    <div className="App container">
+    <div className="layout container">
       <Navbar />
       {selectPage()}
       <Footer />

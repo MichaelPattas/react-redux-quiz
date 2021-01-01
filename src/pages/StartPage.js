@@ -1,53 +1,50 @@
 import React, { useState } from "react";
+
 import { connect } from "react-redux";
-
 import { getQuestionList } from "../actions/getQuestionList";
-import { setGameStatus } from "../actions";
+import { setGameStatus, setGameScore } from "../actions";
 
-import StartButton from "../components/StartButton";
 import DifficultyButton from "../components/DifficultyButton";
-
 import { difficultyButtonInformation } from "../utils/utils";
 
-const StartPage = ({ setGameStatus, getQuestionList }) => {
+import Loading from "../components/Loading";
+
+const StartPage = ({ setGameStatus, getQuestionList, setGameScore }) => {
   const [difficulty, setDifficulty] = useState(null);
-  const [difficultyMessage, setDifficultyMessage] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const getDifficultyLevel = (level) => {
     return setDifficulty(level);
   };
 
-  const startGame = () => {
-    if (!difficulty) {
-      setDifficultyMessage("Please choose difficulty");
-      setTimeout(() => {
-        setDifficultyMessage("");
-      }, 2000);
-    } else {
-      getQuestionList(difficulty);
-      setTimeout(() => {
-        setGameStatus("game-page");
-      }, 1000);
-    }
-  };
+  if (difficulty) {
+    getQuestionList(difficulty);
+    setTimeout(() => {
+      setGameStatus("game-page");
+    }, 1000);
+  }
 
-  const renderDifficultyButtons = difficultyButtonInformation.map(
-    ({ buttonName, difficultyLevel }) => {
-      return (
-        <DifficultyButton
-          getDifficultyLevel={getDifficultyLevel}
-          name={buttonName}
-          level={difficultyLevel}
-        />
-      );
-    }
-  );
+  setTimeout(() => {
+    setLoading(false);
+    setGameScore();
+  }, 1000);
 
+  const renderDifficultyButtons = difficultyButtonInformation.map((button) => {
+    return (
+      <DifficultyButton
+        key={button.buttonName}
+        getDifficultyLevel={getDifficultyLevel}
+        name={button.buttonName}
+        level={button.difficultyLevel}
+      />
+    );
+  });
+
+  if (loading) return <Loading />;
   return (
     <div className="page">
-      <div className="difficulty-title">{difficultyMessage}</div>
+      <h2>Please Choose Difficulty!!</h2>
       <div className="pick-difficulty">{renderDifficultyButtons}</div>
-      <StartButton startGame={startGame} />
     </div>
   );
 };
@@ -59,4 +56,5 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps, {
   getQuestionList,
   setGameStatus,
+  setGameScore,
 })(StartPage);

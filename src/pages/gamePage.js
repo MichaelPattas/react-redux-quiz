@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
-import GameCard from "../components/GameCard";
+import React, { useState } from "react";
 
 import { connect } from "react-redux";
+
+import GameCard from "../components/GameCard";
 import Loading from "../components/Loading";
 
 const GamePage = ({ questionList }) => {
@@ -10,12 +11,12 @@ const GamePage = ({ questionList }) => {
   if (questionList[0]) {
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1000);
   }
 
   if (loading) return <Loading />;
   return (
-    <div className="game-page">
+    <div>
       <GameCard />
     </div>
   );

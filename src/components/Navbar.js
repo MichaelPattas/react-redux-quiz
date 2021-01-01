@@ -1,11 +1,26 @@
 import React from "react";
+import { connect } from "react-redux";
+import { setGameStatus } from "../actions";
 
-const Navbar = () => {
+const Navbar = ({ gameStatus, setGameStatus }) => {
+  const restartGame = () => setGameStatus("start-page");
+
+  const renderIcon = () => {
+    console.log("works");
+    const icon = (
+      <i onClick={restartGame} className="fas fa-arrow-left fa-3x"></i>
+    );
+    return gameStatus == "game-page" ? icon : null;
+  };
+
   return (
-    <div>
+    <div className="navbar">
+      <div className="navbar-icon">{renderIcon()}</div>
       <h1 className="logo">Quiz-Game</h1>
     </div>
   );
 };
 
-export default Navbar;
+const mapStateToProps = (state) => state;
+
+export default connect(mapStateToProps, { setGameStatus })(Navbar);
