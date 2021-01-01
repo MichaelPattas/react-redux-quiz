@@ -8,7 +8,10 @@ const Navbar = ({ gameStatus, setGameStatus }) => {
   const renderIcon = () => {
     console.log("works");
     const icon = (
-      <i onClick={restartGame} className="fas fa-arrow-left fa-3x"></i>
+      <i
+        onClick={restartGame}
+        className="fas fa-arrow-left fa-3x navbar-button"
+      ></i>
     );
     return gameStatus == "game-page" ? icon : null;
   };

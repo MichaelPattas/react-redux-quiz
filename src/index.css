@@ -58,6 +58,13 @@ body {
   align-items: center;
 }
 
+.navbar-button {
+  cursor: pointer;
+}
+.navbar-button:hover {
+  color: rgba(255, 255, 255, 0.514);
+}
+
 /* Logo */
 .logo {
   font-family: "Orbitron", sans-serif;
