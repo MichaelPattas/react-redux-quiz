@@ -26,7 +26,7 @@ const StartPage = ({ setGameStatus, getQuestionList, setGameScore }) => {
 
   setTimeout(() => {
     setLoading(false);
-    setGameScore();
+    setGameScore(0);
   }, 1000);
 
   const renderDifficultyButtons = difficultyButtonInformation.map((button) => {
