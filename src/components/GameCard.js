@@ -31,7 +31,7 @@ const GameCard = ({ questionList, setGameStatus, setGameScore, gameScore }) => {
 
     if (answerButton.value === questionList[questionNumber].correct_answer) {
       answerResult = "right-answer";
-      setGameScore(gameScore);
+      setGameScore(gameScore + 1);
     } else {
       answerResult = "wrong-answer";
     }
