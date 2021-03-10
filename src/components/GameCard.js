@@ -7,6 +7,7 @@ import AnswerButton from "./AnswerButton";
 import Question from "./Question";
 
 const GameCard = ({ questionList, setGameStatus, setGameScore, gameScore }) => {
+  
   const [questionNumber, setQuestionNumber] = useState(0);
   const [answersArray, setAnswersArray] = useState([]);
 
