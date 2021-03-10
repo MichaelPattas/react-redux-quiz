@@ -1,6 +1,7 @@
 import React from "react";
 
 const DifficultyButton = ({ level, name, getDifficultyLevel }) => {
+  
   const onDifficultyButtonClick = () => {
     return getDifficultyLevel(level);
   };
