@@ -1,8 +1,8 @@
 import React from "react";
 import { mount } from "enzyme";
+import "../../setupTest";
 import Root from "../../Root";
 import AnswerButton from "../AnswerButton";
-import "../../setupTest";
 
 let wrapper;
 
@@ -27,12 +27,3 @@ describe("<AnswerButton/>", () => {
     expect(wrapper.find("button").hasClass("answer-button")).toEqual(true);
   });
 });
-
-/* 
-[x] Buttons value is equal to the answer prop
-[]  
-[]
-[]
-[]
-[]
-*/
