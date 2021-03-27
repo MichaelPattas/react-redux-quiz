@@ -7,7 +7,6 @@ import AnswerButton from "./AnswerButton";
 import Question from "./Question";
 
 const GameCard = ({ questionList, setGameStatus, setGameScore, gameScore }) => {
-  
   const [questionNumber, setQuestionNumber] = useState(0);
   const [answersArray, setAnswersArray] = useState([]);
 
@@ -21,6 +20,7 @@ const GameCard = ({ questionList, setGameStatus, setGameScore, gameScore }) => {
   }, [questionNumber]);
 
   const refGameCard = useRef(null);
+  const answerButtonContainer = useRef(null);
 
   if (questionNumber === 9) {
     setGameStatus("game-over-page");
@@ -30,12 +30,17 @@ const GameCard = ({ questionList, setGameStatus, setGameScore, gameScore }) => {
     let answerButton = e.currentTarget;
     let answerResult;
 
+    //Check if the answer is correct
     if (answerButton.value === questionList[questionNumber].correct_answer) {
       answerResult = "right-answer";
       setGameScore(gameScore + 1);
     } else {
       answerResult = "wrong-answer";
     }
+
+    let correctAnswer = answerButtonContainer.current.children;
+    console.log(correctAnswer);
+    addClassName(answerButton, answerResult);
     addClassName(answerButton, answerResult);
     addClassName(refGameCard.current, "disabled");
     setTimeout(() => {
@@ -53,7 +58,9 @@ const GameCard = ({ questionList, setGameStatus, setGameScore, gameScore }) => {
     <div ref={refGameCard} className="container">
       <div className="game-card">
         <Question question={questionList[questionNumber].question} />
-        <div className="game-answers">{renderAnswers}</div>
+        <div ref={answerButtonContainer} className="game-answers">
+          {renderAnswers}
+        </div>
       </div>
     </div>
   );

@@ -6,7 +6,6 @@ const Navbar = ({ gameStatus, setGameStatus }) => {
   const restartGame = () => setGameStatus("start-page");
 
   const renderIcon = () => {
-    console.log("works");
     const icon = (
       <i
         onClick={restartGame}
