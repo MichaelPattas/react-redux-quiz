@@ -38,8 +38,6 @@ const GameCard = ({ questionList, setGameStatus, setGameScore, gameScore }) => {
       answerResult = "wrong-answer";
     }
 
-    let correctAnswer = answerButtonContainer.current.children;
-    console.log(correctAnswer);
     addClassName(answerButton, answerResult);
     addClassName(answerButton, answerResult);
     addClassName(refGameCard.current, "disabled");
