@@ -22,9 +22,3 @@ describe("<DifficultyButton/>", () => {
     expect(wrapper.find("button").hasClass("button-difficulty")).toEqual(true);
   });
 });
-/*
-[] Renders propertly
-[] Has a classname of button-difficulty
-[]
-
-*/
