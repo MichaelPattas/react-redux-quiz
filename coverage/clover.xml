@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1616931848224" clover="3.2.0">
-  <project timestamp="1616931848224" name="All files">
-    <metrics statements="133" coveredstatements="68" conditionals="30" coveredconditionals="14" methods="48" coveredmethods="17" elements="211" coveredelements="99" complexity="0" loc="133" ncloc="133" packages="6" files="19" classes="19"/>
+<coverage generated="1616949849503" clover="3.2.0">
+  <project timestamp="1616949849503" name="All files">
+    <metrics statements="133" coveredstatements="70" conditionals="30" coveredconditionals="14" methods="48" coveredmethods="19" elements="211" coveredelements="103" complexity="0" loc="133" ncloc="133" packages="6" files="19" classes="19"/>
     <package name="src">
       <metrics statements="12" coveredstatements="9" conditionals="5" coveredconditionals="2" methods="4" coveredmethods="4"/>
       <file name="App.js" path="C:\Users\44741\OneDrive\Desktop\react-redux-quiz\src\App.js">
         <metrics statements="10" coveredstatements="7" conditionals="4" coveredconditionals="1" methods="3" coveredmethods="3"/>
         <line num="12" count="1" type="stmt"/>
-        <line num="13" count="4" type="stmt"/>
-        <line num="14" count="4" type="cond" truecount="1" falsecount="3"/>
-        <line num="16" count="4" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
-        <line num="26" count="4" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="36" count="4" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="15" count="4" type="cond" truecount="1" falsecount="3"/>
+        <line num="17" count="4" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="27" count="4" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="37" count="4" type="stmt"/>
       </file>
       <file name="Root.js" path="C:\Users\44741\OneDrive\Desktop\react-redux-quiz\src\Root.js">
         <metrics statements="1" coveredstatements="1" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
@@ -27,7 +27,7 @@
       </file>
     </package>
     <package name="src.actions">
-      <metrics statements="13" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+      <metrics statements="13" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
       <file name="getQuestionList.js" path="C:\Users\44741\OneDrive\Desktop\react-redux-quiz\src\actions\getQuestionList.js">
         <metrics statements="5" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="3" count="1" type="stmt"/>
@@ -37,18 +37,18 @@
         <line num="8" count="0" type="stmt"/>
       </file>
       <file name="index.js" path="C:\Users\44741\OneDrive\Desktop\react-redux-quiz\src\actions\index.js">
-        <metrics statements="4" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="0"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="10" count="1" type="stmt"/>
-        <line num="11" count="0" type="stmt"/>
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
       </file>
       <file name="types.js" path="C:\Users\44741\OneDrive\Desktop\react-redux-quiz\src\actions\types.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="3" type="stmt"/>
-        <line num="2" count="3" type="stmt"/>
-        <line num="3" count="3" type="stmt"/>
-        <line num="5" count="3" type="stmt"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="2" count="4" type="stmt"/>
+        <line num="3" count="4" type="stmt"/>
+        <line num="5" count="4" type="stmt"/>
       </file>
     </package>
     <package name="src.components">

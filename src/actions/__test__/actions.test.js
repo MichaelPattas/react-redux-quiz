@@ -1,5 +1,5 @@
 import { setGameStatus, setGameScore } from "../index";
-import { SET_GAME_STATUS, SET_GAME_SCORE, GET_QUESTION_LIST } from "../types";
+import { SET_GAME_STATUS, SET_GAME_SCORE } from "../types";
 
 describe("Action creators", () => {
   describe("setGameStatus", () => {

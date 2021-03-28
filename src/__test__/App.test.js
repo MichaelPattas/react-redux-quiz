@@ -6,7 +6,6 @@ import App from "../App";
 import Navbar from "../components/Navbar";
 import GamePage from "../pages/GamePage";
 import Footer from "../components/Footer";
-import GameOver from "../components/GameOver";
 
 let wrapper;
 
