@@ -45,7 +45,7 @@ const GameCard = ({ questionList, setGameStatus, setGameScore, gameScore }) => {
       removeClassName(refGameCard.current, "disabled");
       removeClassName(answerButton, answerResult);
       setQuestionNumber(questionNumber + 1);
-    }, 2500);
+    }, 1000);
   };
 
   const renderAnswers = answersArray.map((answer) => (
