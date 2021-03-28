@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1616927384643" clover="3.2.0">
-  <project timestamp="1616927384643" name="All files">
-    <metrics statements="133" coveredstatements="65" conditionals="30" coveredconditionals="11" methods="48" coveredmethods="17" elements="211" coveredelements="93" complexity="0" loc="133" ncloc="133" packages="6" files="18" classes="18"/>
+<coverage generated="1616931848224" clover="3.2.0">
+  <project timestamp="1616931848224" name="All files">
+    <metrics statements="133" coveredstatements="68" conditionals="30" coveredconditionals="14" methods="48" coveredmethods="17" elements="211" coveredelements="99" complexity="0" loc="133" ncloc="133" packages="6" files="19" classes="19"/>
     <package name="src">
       <metrics statements="12" coveredstatements="9" conditionals="5" coveredconditionals="2" methods="4" coveredmethods="4"/>
       <file name="App.js" path="C:\Users\44741\OneDrive\Desktop\react-redux-quiz\src\App.js">
@@ -45,10 +45,10 @@
       </file>
       <file name="types.js" path="C:\Users\44741\OneDrive\Desktop\react-redux-quiz\src\actions\types.js">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="2" type="stmt"/>
-        <line num="2" count="2" type="stmt"/>
-        <line num="3" count="2" type="stmt"/>
-        <line num="5" count="2" type="stmt"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="3" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
       </file>
     </package>
     <package name="src.components">
@@ -175,20 +175,23 @@
       </file>
     </package>
     <package name="src.reducers">
-      <metrics statements="12" coveredstatements="9" conditionals="9" coveredconditionals="6" methods="3" coveredmethods="3"/>
+      <metrics statements="12" coveredstatements="12" conditionals="9" coveredconditionals="9" methods="3" coveredmethods="3"/>
       <file name="index.js" path="C:\Users\44741\OneDrive\Desktop\react-redux-quiz\src\reducers\index.js">
-        <metrics statements="12" coveredstatements="9" conditionals="9" coveredconditionals="6" methods="3" coveredmethods="3"/>
-        <line num="8" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="9" count="11" type="cond" truecount="1" falsecount="1"/>
-        <line num="11" count="0" type="stmt"/>
-        <line num="13" count="11" type="stmt"/>
-        <line num="16" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="17" count="11" type="cond" truecount="1" falsecount="1"/>
-        <line num="19" count="0" type="stmt"/>
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="reducers.js" path="C:\Users\44741\OneDrive\Desktop\react-redux-quiz\src\reducers\reducers.js">
+        <metrics statements="12" coveredstatements="12" conditionals="9" coveredconditionals="9" methods="3" coveredmethods="3"/>
+        <line num="7" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="8" count="12" type="cond" truecount="2" falsecount="0"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="12" count="11" type="stmt"/>
+        <line num="16" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="17" count="12" type="cond" truecount="2" falsecount="0"/>
+        <line num="19" count="1" type="stmt"/>
         <line num="21" count="11" type="stmt"/>
-        <line num="25" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="26" count="11" type="cond" truecount="1" falsecount="1"/>
-        <line num="28" count="0" type="stmt"/>
+        <line num="25" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="26" count="12" type="cond" truecount="2" falsecount="0"/>
+        <line num="28" count="1" type="stmt"/>
         <line num="30" count="11" type="stmt"/>
       </file>
     </package>

@@ -10,6 +10,7 @@ import GameOver from "./components/GameOver";
 import { connect } from "react-redux";
 
 const App = ({ gameStatus }) => {
+  // IT renders a different page depenting on the status
   const selectPage = () => {
     switch (gameStatus) {
       case "start-page":
