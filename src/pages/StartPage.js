@@ -43,7 +43,7 @@ const StartPage = ({ setGameStatus, getQuestionList, setGameScore }) => {
   if (loading) return <Loading />;
   return (
     <div className="page">
-      <h2>Please choose difficulty !</h2>
+      <h2>Please Select Your difficulty !</h2>
       <div className="pick-difficulty">{renderDifficultyButtons}</div>
     </div>
   );
