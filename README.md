@@ -16,6 +16,6 @@ Simple and **Fun** quiz game
 
 # Images
 
-![alt text](./src\image\first-page.png "Logo Title Text 1")
-![alt text](./src/image\quizy-game-page.png "Logo Title Text 1")
-![alt text](./src\image\quizy-gameover.png "Logo Title Text 1")
+![alt text](./src/image/first-page.png "Logo Title Text 1")
+![alt text](./src/image/quizy-game-page.png "Logo Title Text 1")
+![alt text](./src/image/quizy-gameover.png "Logo Title Text 1")
