@@ -2,7 +2,7 @@
 
 Simple and **Fun** quiz game
 
-[Try the game](https://react-redux-quizz.herokuapp.com/)
+[Try the game](https://react-redux-quizz.herokuapp.com/) :tada::tada:
 
 ## Made with
 
@@ -12,4 +12,10 @@ Simple and **Fun** quiz game
 
 ### Deployed On
 
-![alt text :tada:](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white "Logo Title Text 1")
+![alt text ](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white "Logo Title Text 1")
+
+# Images
+
+![alt text](src\image\first-page.png "Logo Title Text 1")
+![alt text](src\image\quizy-game-page.png "Logo Title Text 1")
+![alt text](src\image\quizy-gameover.png "Logo Title Text 1")
