@@ -18,7 +18,7 @@ const Navbar = ({ gameStatus, setGameStatus }) => {
   return (
     <div className="navbar">
       <div className="navbar-icon">{renderIcon()}</div>
-      <h1 className="logo">Quiz-Game</h1>
+      <h1 className="logo">Quizy</h1>
     </div>
   );
 };

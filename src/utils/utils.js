@@ -26,5 +26,3 @@ export const difficultyButtonInformation = [
     difficultyLevel: "hard",
   },
 ];
-
-export const difficultyLevelMessage = "Please Choose  Difficulty Level";
