@@ -29,23 +29,33 @@ const GameCard = ({ questionList, setGameStatus, setGameScore, gameScore }) => {
   const checkAnswer = (e) => {
     let answerButton = e.currentTarget;
     let answerResult;
-
+    let revealCorrectAnswer;
     //Check if the answer is correct
     if (answerButton.value === questionList[questionNumber].correct_answer) {
       answerResult = "right-answer";
       setGameScore(gameScore + 1);
     } else {
       answerResult = "wrong-answer";
+      const correctAnswer = answerButtonContainer.current.children;
+      revealCorrectAnswer = [...correctAnswer].filter(
+        (button) => button.value === questionList[questionNumber].correct_answer
+      );
     }
-
     addClassName(answerButton, answerResult);
     addClassName(answerButton, answerResult);
     addClassName(refGameCard.current, "disabled");
+
+    // Reaveals the correct question if the answer is wrong
+    if (revealCorrectAnswer) {
+      addClassName(revealCorrectAnswer[0], "reveal-correct-answer");
+    }
+
     setTimeout(() => {
+      //Resets the game card
       removeClassName(refGameCard.current, "disabled");
       removeClassName(answerButton, answerResult);
       setQuestionNumber(questionNumber + 1);
-    }, 1000);
+    }, 1500);
   };
 
   const renderAnswers = answersArray.map((answer) => (

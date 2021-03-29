@@ -175,6 +175,11 @@ body {
   background: crimson;
 }
 
+.reveal-correct-answer {
+  border: 3px solid green;
+  transition: 0.5s ease-in;
+}
+
 .disabled {
   pointer-events: none;
 }
