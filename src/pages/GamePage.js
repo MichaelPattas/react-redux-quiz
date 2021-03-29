@@ -25,4 +25,5 @@ const GamePage = ({ questionList }) => {
 const mapStateToProps = (state) => {
   return state;
 };
+
 export default connect(mapStateToProps)(GamePage);

@@ -6,6 +6,8 @@ Simple and **Fun** quiz game
 <br/>
 <br/>
 
+<br/>
+
 ## Made with
 
 ![alt text](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB "Logo Title Text 1")
@@ -17,12 +19,12 @@ Simple and **Fun** quiz game
 
 ![alt text ](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white "Logo Title Text 1")
 
-# Images
+# IMAGES
 
-![alt text](./src\image\first-page.png "Logo Title Text 1")
+![alt text](./src/image/first-page.png "Logo Title Text 1")
 <br/>
 
-![alt text](./src/image\quizy-game-page.png "Logo Title Text 1")
+![alt text](./src/image/quizy-game-page.png "Logo Title Text 1")
 <br/>
 
 ![alt text](./src\image\quizy-gameover.png "Logo Title Text 1")
