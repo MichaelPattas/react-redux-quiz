@@ -27,4 +27,4 @@ Simple and **Fun** quiz game
 ![alt text](./src/image/quizy-game-page.png "Logo Title Text 1")
 <br/>
 
-![alt text](./src\image\quizy-gameover.png "Logo Title Text 1")
+
